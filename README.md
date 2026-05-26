@@ -1,2 +1,3 @@
-# new-css-tech.github.io
-A website covering three modern CSS technologies.
+# New CSS Technologies
+## A website covering three modern CSS technologies.
+### Produced by Jes, Timmy, and Craig
