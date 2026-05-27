@@ -1,0 +1,424 @@
+/* =====================================================
+   TABLE OF CONTENTS
+   -----------------
+   - Base: typography
+   - Base: links
+   - Layout
+   - Component: header
+   - Component: technology rows
+   - Component: content boxes
+   - Component: sources and footer
+   - Media queries
+   ===================================================== */
+
+/* =====================================================
+   Base: typography
+   ===================================================== */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #0c1021;
+  background-color: #f8f7ef;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+  line-height: 1.1;
+}
+
+h1 {
+  max-width: 15rem;
+  margin-bottom: 1rem;
+  /* CLamp is a CSS function that allows you to set a value that scales between a minimum and maximum based on the viewport width */
+  font-size: clamp(
+    3rem,       /* 1. Minimum size (Mobile screens) */
+    8vw + 1rem, /* 2. Preferred fluid size (Scales with screen width) */
+    5.75rem     /* 3. Maximum size (Large desktop screens) */
+  );
+  text-transform: uppercase;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+h3 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+p {
+  margin-top: 0;
+}
+
+.intro-text,
+.summary {
+  max-width: 45rem;
+  font-size: 1.125rem;
+}
+
+.section-label {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  /* we can try different font styles */
+  font-family: Consolas, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+/* Use code for inline code snippets */
+code {
+  padding: 0.125rem 0.3125rem;
+  color: #f8f7ef;
+  background-color: #0c1021;
+}
+
+/* =====================================================
+   Base: links
+   ===================================================== */
+
+a,
+a:visited {
+  color: #0c1021;
+}
+
+a:hover {
+  text-decoration-thickness: 3px;
+  text-decoration-style: dotted;
+  text-decoration-color: #0c1021;
+}
+
+a:focus {
+  outline: 3px solid #0c1021;
+  outline-offset: 3px;
+}
+
+a:active {
+  color: #6d28d9;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  /* Move the link way off the top of the screen so it is hidden */
+  top: -10rem;
+  padding: 0.5rem 1rem;
+  color: #f8f7ef;
+  background-color: #0c1021;
+}
+
+.skip-link:focus {
+  /* Bring the link back onto the screen when a keyboard user focuses it */
+  top: 1rem;
+  color: #f8f7ef;
+}
+
+/* =====================================================
+   Layout
+   Main content width.
+   90rem is about 1440px with normal browser settings.
+   Main content area can grow up to about 1440px wide before it stops expanding and centers itself.
+   ===================================================== */
+
+.site-header,
+main,
+.site-footer {
+  max-width: 90rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.site-header {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+main {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* =====================================================
+   Component: header
+   ===================================================== */
+
+.header-content {
+  padding: 1rem;
+  border: 4px solid #0c1021;
+  background-color: #f8f7ef;
+  box-shadow: 6px 6px 0 #0c1021;
+}
+
+.topic-nav {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.topic-card {
+  display: block;
+  min-height: 6rem;
+  padding: 1rem;
+  border: 3px solid #0c1021;
+  font-family: Consolas, monospace;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 #0c1021;
+}
+
+.topic-card-one,
+.topic-card-one:visited {
+  color: #f8f7ef;
+  background-color: #6d28d9;
+}
+
+.topic-card-two {
+  color: #0c1021;
+  background-color: #0fc6c2;
+}
+
+.topic-card-three,
+.topic-card-three:visited {
+  color: #f8f7ef;
+  background-color: #0c1021;
+}
+
+.topic-number {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-size: 1.5rem;
+}
+
+.topic-title {
+  display: block;
+}
+
+.topic-note {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  text-transform: none;
+}
+
+.hero-picture {
+  display: block;
+  margin-top: 1rem;
+}
+
+.hero-image {
+  width: 100%;
+  min-height: 16rem;
+  border: 4px solid #0c1021;
+  object-fit: cover;
+}
+
+/* =====================================================
+   Component: technology rows
+   ===================================================== */
+
+.technology-row {
+  border: 4px solid #0c1021;
+  background-color: #f8f7ef;
+  box-shadow: 6px 6px 0 #0c1021;
+}
+
+.row-label {
+  padding: 1rem;
+  border-bottom: 4px solid #0c1021;
+}
+
+.row-label p {
+  margin-bottom: 0.5rem;
+  font-family: Consolas, monospace;
+  font-weight: 700;
+}
+
+.row-label h2 {
+  font-family: Consolas, monospace;
+  text-transform: uppercase;
+}
+
+.tech-section {
+  padding: 1rem;
+  border-bottom: 4px solid #0c1021;
+}
+
+.section-link {
+  display: block;
+  padding: 1rem;
+  border-bottom: 4px solid #0c1021;
+  font-family: Consolas, monospace;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* 60 / 30 / 10 colour idea:
+   - The main section background is the dominant colour.
+   - The inner cards/boxes are the secondary colour.
+   - The What / How / Demo side links are the accent colour. */
+
+.tech-one .row-label,
+.tech-one .tech-section {
+  color: #f8f7ef;
+  background-color: #6d28d9;
+}
+
+.tech-one .section-link,
+.tech-one .section-link:visited {
+  color: #0c1021;
+  background-color: #0fc6c2;
+}
+
+.tech-two .row-label,
+.tech-two .tech-section {
+  color: #0c1021;
+  background-color: #0fc6c2;
+}
+
+.tech-two .section-link,
+.tech-two .section-link:visited {
+  color: #f8f7ef;
+  background-color: #6d28d9;
+}
+
+.tech-three .row-label {
+  color: #f8f7ef;
+  background-color: #0c1021;
+}
+
+.tech-three .section-link,
+.tech-three .section-link:visited {
+  color: #0c1021;
+  background-color: #0fc6c2;
+}
+
+.tech-three .info-cards section,
+.tech-three .content-box {
+  color: #f8f7ef;
+  background-color: #0c1021;
+}
+
+/* =====================================================
+   Component: content boxes
+   ===================================================== */
+
+.info-cards section,
+.content-box,
+.sources {
+  color: #0c1021;
+  background-color: #f8f7ef;
+  border: 3px solid #0c1021;
+  padding: 1rem;
+}
+
+.info-cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.content-box {
+  margin-top: 1rem;
+}
+
+/* =====================================================
+   Component: sources and footer
+   ===================================================== */
+
+.sources ul {
+  margin-bottom: 0;
+  padding-left: 1.25rem;
+}
+
+.site-footer {
+  padding-bottom: 2rem;
+  font-weight: 700;
+}
+
+/* =====================================================
+   Media queries
+   48em = 768px when the browser default font size is 16px.
+   ===================================================== */
+
+@media (min-width: 48em) {
+  .header-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+    padding: 2rem;
+  }
+
+  .topic-nav {
+    flex-direction: row;
+  }
+
+  .topic-card {
+    flex: 1;
+  }
+
+  .hero-picture {
+    margin-top: 0;
+  }
+
+  .hero-image {
+    height: 100%;
+  }
+
+  .technology-row {
+    display: grid;
+    grid-template-columns: 13rem 1fr 10rem;
+  }
+
+  .row-label {
+    grid-column: 1;
+    grid-row: span 3;
+    border-right: 4px solid #0c1021;
+    border-bottom: 0;
+  }
+
+  .tech-section {
+    grid-column: 2;
+    padding: 2rem;
+  }
+
+  .section-link {
+    display: flex;
+    grid-column: 3;
+    align-items: center;
+    justify-content: center;
+    border-left: 4px solid #0c1021;
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  .sources {
+    display: grid;
+    grid-template-columns: 22rem 1fr;
+    gap: 1.5rem;
+  }
+}
