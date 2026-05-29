@@ -7,6 +7,7 @@
    - Component: header
    - Component: technology rows
    - Component: content boxes
+   - Component: Craig's native CSS carousel demo
    - Component: sources and footer
    - Media queries
    ===================================================== */
@@ -340,6 +341,202 @@ main {
 
 .content-box {
   margin-top: 1rem;
+}
+
+/* =====================================================
+   Component: Craig's native CSS carousel demo
+   These styles are scoped to tech-two to avoid affecting teammate sections.
+   ===================================================== */
+
+.tech-two .carousel-steps {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.tech-two .carousel-step {
+  padding: 1rem;
+  color: #0c1021;
+  background-color: #f8f7ef;
+  border: 3px solid #0c1021;
+}
+
+.tech-two .carousel-step-text p:last-child {
+  margin-bottom: 0;
+}
+
+.tech-two .carousel-demo-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* The wrapper reserves side space for generated buttons. */
+.tech-two .carousel-showcase {
+  position: relative;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 4.25rem 1rem;
+}
+
+.tech-two .demo-carousel {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 1rem;
+  overflow-x: auto;
+  list-style: none;
+  border: 3px solid #0c1021;
+  background-color: #f8f7ef;
+  scroll-snap-type: x mandatory;
+  anchor-name: --carousel-window;
+}
+
+.tech-two .demo-carousel > li {
+  flex: 0 0 10rem;
+  width: 10rem;
+  height: 10rem;
+  background-color: transparent;
+  border: 3px solid #0c1021;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.tech-two .demo-code {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  color: #f8f7ef;
+  background-color: #0c1021;
+  border: 3px solid #0c1021;
+}
+
+.tech-two .demo-code code {
+  padding: 0;
+  color: #f8f7ef;
+  background-color: transparent;
+}
+
+
+
+
+
+.tech-two #carousel-how .content-box li + li {
+  margin-top: 0.75rem;
+}
+
+.tech-two #carousel-how code {
+  padding: 0.125rem 0.3125rem;
+  color: #f8f7ef;
+  background-color: #0c1021;
+}
+
+.tech-two .code-highlight {
+  padding: 0.0625rem 0.1875rem;
+  color: #0c1021;
+  background-color: #0fc6c2;
+  font-weight: 700;
+}
+
+
+/* Scroll buttons.
+   The content property creates browser-provided button elements. */
+
+.tech-two .demo-carousel-buttons::scroll-button(left),
+.tech-two .demo-carousel-complete::scroll-button(left) {
+  content: "⬅" / "Scroll Left";
+}
+
+.tech-two .demo-carousel-buttons::scroll-button(right),
+.tech-two .demo-carousel-complete::scroll-button(right) {
+  content: "⮕" / "Scroll Right";
+}
+
+.tech-two .demo-carousel-buttons::scroll-button(left),
+.tech-two .demo-carousel-buttons::scroll-button(right),
+.tech-two .demo-carousel-complete::scroll-button(left),
+.tech-two .demo-carousel-complete::scroll-button(right) {
+  width: 3.25rem;
+  height: 3.25rem;
+  border: 3px solid #0c1021;
+  font-family: Consolas, monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #0c1021;
+  background-color: #f8f7ef;
+  cursor: pointer;
+}
+
+.tech-two .demo-carousel-buttons::scroll-button(*):focus-visible,
+.tech-two .demo-carousel-complete::scroll-button(*):focus-visible {
+  outline-offset: 5px;
+}
+
+.tech-two .demo-carousel-buttons::scroll-button(*):disabled,
+.tech-two .demo-carousel-complete::scroll-button(*):disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* On wider screens, anchor the generated buttons beside the scroll window. */
+@media (min-width: 48em) {
+  @supports (anchor-name: --carousel-window) and (position-area: center left) {
+    .tech-two .demo-carousel-buttons::scroll-button(left),
+    .tech-two .demo-carousel-buttons::scroll-button(right),
+    .tech-two .demo-carousel-complete::scroll-button(left),
+    .tech-two .demo-carousel-complete::scroll-button(right) {
+      position: absolute;
+      position-anchor: --carousel-window;
+      margin: 0;
+    }
+
+    .tech-two .demo-carousel-buttons::scroll-button(left),
+    .tech-two .demo-carousel-complete::scroll-button(left) {
+      position-area: center left;
+      justify-self: end;
+      margin-right: 0.75rem;
+    }
+
+    .tech-two .demo-carousel-buttons::scroll-button(right),
+    .tech-two .demo-carousel-complete::scroll-button(right) {
+      position-area: center right;
+      justify-self: start;
+      margin-left: 0.75rem;
+    }
+  }
+}
+
+/* Scroll markers. */
+
+.tech-two .demo-carousel-markers,
+.tech-two .demo-carousel-complete {
+  scroll-marker-group: after;
+}
+
+.tech-two .demo-carousel-markers::scroll-marker-group,
+.tech-two .demo-carousel-complete::scroll-marker-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.tech-two .demo-carousel-markers > li::scroll-marker,
+.tech-two .demo-carousel-complete > li::scroll-marker {
+  content: " ";
+  width: 1rem;
+  height: 1rem;
+  border: 3px solid #0c1021;
+  border-radius: 50%;
+  background-color: #f8f7ef;
+}
+
+.tech-two .demo-carousel-markers > li::scroll-marker:target-current,
+.tech-two .demo-carousel-complete > li::scroll-marker:target-current {
+  background: #0c1021;
 }
 
 /* =====================================================
