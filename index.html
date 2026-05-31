@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta
     name="description"
-    content="A Web Dev 2 project site about three new CSS tech topics, including xyz">
+    content="A Web Dev 2 project site about three new CSS tech topics, custom functions, carosel controls, and z">
   <title>Team 5: New CSS Tech</title>
 
   <link rel="stylesheet" href="styles/normalize-fwd.css">
@@ -23,15 +23,13 @@
         <h1>New CSS Tech</h1>
 
         <p class="intro-text">
-          A website covering three modern CSS technologies. Each row explains
-          what the tech is, what it does, why to use it, where to use it, and
-          how it works.
+          A website covering three modern CSS technologies - custom CSS functions, native carosel controls, and z.
         </p>
 
         <nav class="topic-nav" aria-label="Technology sections">
           <a class="topic-card topic-card-one" href="#technology-one">
             <span class="topic-number">01</span>
-            <span class="topic-title">Tech</span>
+            <span class="topic-title">Custom CSS Functions</span>
             <span class="topic-note">Jes's Tech</span>
           </a>
 
@@ -69,36 +67,35 @@
     <section class="technology-row tech-one" id="technology-one" aria-labelledby="tech-one-title">
       <div class="row-label">
         <p>01</p>
-        <h2 id="tech-one-title">Tech</h2>
+        <h2 id="tech-one-title">if() function</h2>
       </div>
 
       <section class="tech-section" id="tech-one-what">
         <p class="section-label">Jes · What</p>
-        <h3>Technology One </h3>
+        <h3>if() function</h3>
 
         <p class="summary">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos hic sed cum ex, possimus veritatis aperiam accusamus fugit neque quia quae nam repellendus aliquam voluptatem? Excepturi cum officiis doloremque praesentium!
-        </p>
+          CSS custom functions are used to set paramaters, define variables, and call the result.  The <code>if()</code> function adds inline conditionals to customize style, media, or supports queries.
 
         <div class="info-cards">
           <section>
             <h4>What is it?</h4>
-            <p>Add the definition here.</p>
+            <p>The <code>if()</code> function gives conditional logic to CSS property values.</p>
           </section>
 
           <section>
             <h4>What does it do?</h4>
-            <p>Add the core function here.</p>
+            <p>Used to test a CSS property against a condition.</p>
           </section>
 
           <section>
             <h4>Why use it?</h4>
-            <p>Add the practical reason here.</p>
+            <p>Abbrieviates CSS , creating shorter files that are easier to read.</p>
           </section>
 
           <section>
             <h4>Where would you use it?</h4>
-            <p>Add real web use cases here.</p>
+            <p>Adjust property values based on user selections, viewport size, or browser.</p>
           </section>
         </div>
       </section>
@@ -107,10 +104,19 @@
 
       <section class="tech-section" id="tech-one-how">
         <p class="section-label">Jes · How</p>
-        <h3>How it works</h3>
+        <h3>How it Works</h3>
 
         <div class="content-box">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos hic sed cum ex, possimus veritatis aperiam accusamus fugit neque quia quae nam repellendus aliquam voluptatem? Excepturi cum officiis doloremque praesentium!</p>
+          <ol>
+            <li>Choose a CSS property.</li>
+            <li>Create a conditional <code>if()</code> function.</li>
+              <ol type="a">
+                <li>Use <code>style()</code> to check custom properties.</li>
+                <li>Use <code>media()</code> to adjust based on the viewport.</li>
+                <li>Use <code>supports()</code> to change the property based on what the browser supports.  This one must end with an <code>else: value</code>pair.</li>
+              </ol>
+            <li>The property will be set to the value of the first true condition found.</li>
+          </ol>
         </div>
       </section>
 
@@ -121,11 +127,14 @@
         <h3>Demo</h3>
 
         <div class="content-box">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos hic sed cum ex, possimus veritatis aperiam accusamus fugit neque quia quae nam repellendus aliquam voluptatem? Excepturi cum officiis doloremque praesentium!</p>
+
+          <p>Adjusting theme colours based on user selection and change flex-direction depending on the viewport width using a custom function and <code>if()</code>.</p>
+
         </div>
       </section>
 
       <a class="section-link link-demo" href="#tech-one-demo">Demo</a>
+      
     </section>
 
     <section class="technology-row tech-two" id="native-carousel-controls" aria-labelledby="tech-two-title">
@@ -406,15 +415,48 @@
     <section class="sources" aria-labelledby="sources-title">
       <div>
         <p class="section-label">Sources</p>
-        <h2 id="sources-title">Research links</h2>
+        <h2 id="sources-title">Research Links</h2>
       </div>
 
-      <ul>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Overflow/Carousels">MDN: Creating CSS carousels</a></li>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button">MDN: ::scroll-button()</a></li>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-marker">MDN: ::scroll-marker</a></li>
-        <li><a href="https://developer.chrome.com/blog/carousels-with-css">Chrome Developers: Carousels with CSS</a></li>
-      </ul>
+      <table class="reference-table">
+
+        <thead>
+            <tr>
+              <th>Tech One</th>
+              <th>Tech Two</th>
+              <th>Tech Three</th>
+            </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+              <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Overflow/Carousels">MDN: Creating CSS carousels</a></td>
+              <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/if">MDN: if() CSS Function</a></td>
+              <td></td>
+          </tr>
+
+          <tr>
+              <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button">MDN: ::scroll-button()</a></td>
+              <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Custom_functions_and_mixins/Using_custom_functions">MDN: Using CSS Custom Functions</a></td>
+              <td></td>
+          </tr>
+
+          <tr>
+              <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-marker">MDN: ::scroll-marker</a></td>
+              <td><a href="https://www.youtube.com/watch?v=svqu6FDiMAs&list=PLwdxEUTBzNh4LAn5dIlaIlFhHs1AWslc2&index=7&t=417s">YouTube: 10 NEW CSS Features You Need To Know For 2026</a></td>
+              <td></td>
+          </tr>
+
+          <tr>
+              <td><a href="https://developer.chrome.com/blog/carousels-with-css">Chrome Developers: Carousels with CSS</a></td>
+              <td></td>
+              <td></td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
     </section>
   </main>
 
