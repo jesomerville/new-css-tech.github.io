@@ -138,44 +138,30 @@
         <p class="section-label">Craig · What</p>
         <h3>Native CSS Carousel Controls</h3>
 
-        <p class="summary">
-          <code>::scroll-button()</code>, <code>::scroll-marker</code>, and
-          <code>scroll-marker-group</code> let CSS create carousel arrows and
-          marker navigation for a scroll container. Scroll snap is only the
-          supporting behaviour that makes each slide land cleanly.
-        </p>
+        <p class="summary"><code>::scroll-button()</code>, <code>::scroll-marker</code>, and <code>scroll-marker-group</code> let CSS add carousel buttons and marker navigation to a scroll container. The key benefit is that the browser creates stateful controls with roles, tab order, focus behaviour, and active states, instead of leaving all of that work to custom JavaScript.</p>
 
         <div class="info-cards">
           <section>
             <h4>What is it?</h4>
             <p>
-              It is an emerging CSS carousel feature set that adds
-              browser-generated controls to scrollable content.
+              A CSS feature set for adding browser-generated scroll buttons and
+              marker navigation to a scroll container.
             </p>
           </section>
 
           <section>
             <h4>What does it do?</h4>
-            <p>
-              It can create previous/next scroll buttons and marker navigation
-              without writing custom JavaScript.
-            </p>
+            <p><code>::scroll-button(left)</code> and <code>::scroll-button(right)</code> create previous and next buttons. <code>scroll-marker-group</code> and <code>::scroll-marker</code> create dot or label navigation.</p>
           </section>
 
           <section>
             <h4>Why use it?</h4>
-            <p>
-              It provides a native, accessible, and performant carousel solution
-              with minimal code.
-            </p>
+            <p>It can reduce custom JavaScript while keeping the carousel as a normal scroll area. Because the controls are browser-generated, accessibility details such as keyboard access, roles, state, and focus behaviour are handled more consistently.</p>
           </section>
 
           <section>
             <h4>Where would you use it?</h4>
-            <p>
-              Product galleries, card shelves, image galleries, onboarding
-              panels, feature tours, and any simple manual carousel.
-            </p>
+            <p>Product galleries, card shelves, image galleries, onboarding panels, feature tours, and any simple manual carousel.</p>
           </section>
         </div>
       </section>
@@ -184,36 +170,176 @@
 
       <section class="tech-section" id="carousel-how">
         <p class="section-label">Craig · How</p>
-        <h3>How the new CSS works</h3>
+        <h3>How the new CSS builds up</h3>
 
         <div class="content-box">
+          <p>Native CSS carousel controls start with a normal scroll container. Then CSS adds browser-generated controls around that scroller: <code>::scroll-button(left)</code>, <code>::scroll-button(right)</code>, <code>scroll-marker-group</code>, <code>::scroll-marker</code>, and <code>:target-current</code>.</p>
           <ol>
-            <li>Build the carousel as a normal horizontal scrolling list.</li>
-            <li>Add <code>scroll-snap-type</code> so slides stop cleanly.</li>
-            <li>Add <code>scroll-marker-group: after;</code> for marker navigation.</li>
-            <li>Use <code>::scroll-button(left)</code> for the previous button.</li>
-            <li>Use <code>::scroll-button(right)</code> for the next button.</li>
-            <li>Use <code>::scroll-marker</code> on each slide for markers.</li>
-            <li>Use <code>:target-current</code> to style the active marker.</li>
+            <li><strong>Start with a scroller. </strong>Use <code>display: flex</code> and <code>overflow-x: auto</code> so the square tiles become a horizontal scroll area.</li>
+            <li><strong>Add scroll snap. </strong>Use <code>scroll-snap-type: x mandatory</code> on the scroller and <code>scroll-snap-align: center</code> on each tile so the carousel stops cleanly.</li>
+            <li><strong>Add scroll buttons. </strong>Use <code>::scroll-button(left)</code> and <code>::scroll-button(right)</code> so the browser creates previous and next buttons.</li>
+            <li><strong>Add button content. </strong>Use <code>content</code> to place the visible arrows and accessible fallback labels, such as <code>"⬅" / "Scroll Left"</code>.</li>
+            <li><strong>Add scroll markers. </strong>Use <code>scroll-marker-group: after</code> to create the marker area, then use <code>::scroll-marker</code> on the tiles to create dot navigation.</li>
+            <li><strong>Style the current marker. </strong>Use <code>:target-current</code> so the active dot changes when that tile is current.</li>
+            <li><strong>Combine the controls. </strong>The final demo uses the scroller, snap points, side buttons, and dot markers together without custom JavaScript.</li>
           </ol>
         </div>
       </section>
 
       <a class="section-link link-how" href="#carousel-how">How</a>
-
       <section class="tech-section" id="carousel-demo">
         <p class="section-label">Craig · Demo</p>
-        <h3>Demo</h3>
-
+        <h3>Build-up demo</h3>
         <div class="content-box">
-          <p>
-            Add the demo here. The demo should be a working example of a carousel using the new native CSS controls, with some sample content to show how it works in practice.
-          </p>
+          <p>The demo builds the carousel in stages: first a normal horizontal scroller, then scroll snap, then browser-generated previous/next buttons, then browser-generated dot markers, and finally both controls together. The outlined square tiles make the scrolling behaviour easy to see.</p>
+        </div>
+        <div class="carousel-steps">
+          <section class="carousel-step">
+            <div class="carousel-step-text">
+              <p class="section-label">Step 1</p>
+              <h4>Start with a scroller</h4>
+              <p>
+                The base pattern is just a horizontal list with overflow and
+                scroll snap. This still works even if the new carousel controls
+                are unsupported.
+              </p>
+            </div>
+            <div class="carousel-demo-grid">
+              <div class="carousel-showcase">
+                <ul aria-label="Basic horizontal scroller example" class="demo-carousel demo-carousel-basic">
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                </ul>
+              </div>
+              <pre class="demo-code"><code>.carousel {
+        display: flex;
+        gap: 1rem;
+        <span class="code-highlight">overflow-x: auto;</span>
+        <span class="code-highlight">scroll-snap-type: x mandatory;</span>
+      }
+
+      .carousel &gt; li {
+        <span class="code-highlight">flex: 0 0 10rem;</span>
+        width: 10rem;
+        height: 10rem;
+        border: 3px solid currentColor;
+        <span class="code-highlight">scroll-snap-align: center;</span>
+      }</code></pre>
+            </div>
+          </section>
+          <section class="carousel-step">
+            <div class="carousel-step-text">
+              <p class="section-label">Step 2</p>
+              <h4>Add scroll buttons</h4>
+              <p><code>::scroll-button(left)</code> and <code>::scroll-button(right)</code> let CSS ask the browser to create previous and next buttons for the scroll area. These browser-created buttons page through most of the scroll area.</p>
+            </div>
+            <div class="carousel-demo-grid">
+              <div class="carousel-showcase">
+                <ul aria-label="Carousel with scroll buttons example" class="demo-carousel demo-carousel-buttons">
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                </ul>
+              </div>
+              <pre class="demo-code"><code>.carousel<span class="code-highlight">::scroll-button(left)</span> {
+        <span class="code-highlight">content: "⬅" / "Scroll Left";</span>
+      }
+
+      .carousel<span class="code-highlight">::scroll-button(right)</span> {
+        <span class="code-highlight">content: "⮕" / "Scroll Right";</span>
+      }
+
+      .carousel::scroll-button(*)<span class="code-highlight">:focus-visible</span> {
+        outline-offset: 5px;
+      }</code></pre>
+            </div>
+          </section>
+          <section class="carousel-step">
+            <div class="carousel-step-text">
+              <p class="section-label">Step 3</p>
+              <h4>Add scroll markers</h4>
+              <p>
+                <code>scroll-marker-group</code> creates the marker area, and
+                <code>::scroll-marker</code> creates a marker for selected
+                scroll items. <code>:target-current</code> styles the active
+                marker.
+              </p>
+            </div>
+            <div class="carousel-demo-grid">
+              <div class="carousel-showcase">
+                <ul aria-label="Carousel with scroll markers example" class="demo-carousel demo-carousel-markers">
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                </ul>
+              </div>
+              <pre class="demo-code"><code>.carousel {
+        <span class="code-highlight">scroll-marker-group: after;</span>
+      }
+
+      .carousel &gt; li<span class="code-highlight">::scroll-marker</span> {
+        <span class="code-highlight">content: " ";</span>
+      }
+
+      .carousel &gt; li::scroll-marker<span class="code-highlight">:target-current</span> {
+        background: currentColor;
+      }</code></pre>
+            </div>
+          </section>
+          <section class="carousel-step">
+            <div class="carousel-step-text">
+              <p class="section-label">Step 4</p>
+              <h4>Use both together</h4>
+              <p>
+                The full version combines the basic scroller, scroll snap,
+                buttons, and markers. The new controls are wrapped in
+                support checks so unsupported browsers still get the
+                horizontal scroller.
+              </p>
+            </div>
+            <div class="carousel-demo-grid">
+              <div class="carousel-showcase">
+                <ul aria-label="Carousel with scroll buttons and markers example" class="demo-carousel demo-carousel-complete">
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                  <li aria-hidden="true"></li>
+                </ul>
+              </div>
+              <pre class="demo-code"><code>.carousel {
+        scroll-snap-type: x mandatory;
+        <span class="code-highlight">scroll-marker-group: after;</span>
+      }
+
+      .carousel<span class="code-highlight">::scroll-button(left)</span> {
+        <span class="code-highlight">content: "⬅" / "Scroll Left";</span>
+      }
+
+      .carousel<span class="code-highlight">::scroll-button(right)</span> {
+        <span class="code-highlight">content: "⮕" / "Scroll Right";</span>
+      }
+
+      .carousel &gt; li<span class="code-highlight">::scroll-marker</span> {
+        <span class="code-highlight">content: " ";</span>
+      }</code></pre>
+            </div>
+          </section>
         </div>
       </section>
-
       <a class="section-link link-demo" href="#carousel-demo">Demo</a>
-    </section>
+      </section>
 
     <section class="technology-row tech-three" id="technology-three" aria-labelledby="tech-three-title">
       <div class="row-label">
