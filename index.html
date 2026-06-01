@@ -1,328 +1,460 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta
-          name="description"
-          content="A Web Dev 2 project site about three new CSS tech topics, including xyz">
-  <title>Team 5: New CSS Tech</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+            name="description"
+            content="A Web Dev 2 project site about three new CSS tech topics, custom functions, carosel controls, and z">
+    <title>Team 5: New CSS Tech</title>
 
-  <link rel="stylesheet" href="styles/normalize-fwd.css">
-  <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/normalize-fwd.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <header class="site-header">
-  <div class="header-content">
-    <div class="header-text">
-      <p class="section-label">FWDP 2000 · Project 01A/01B · Team 5</p>
+    <div class="header-content">
+        <div class="header-text">
+            <p class="section-label">FWDP 2000 · Project 01A/01B · Team 5</p>
 
-      <h1>New CSS Tech</h1>
+            <h1>New CSS Tech</h1>
 
-      <p class="intro-text">
-        A website covering three modern CSS technologies. Each row explains
-        what the tech is, what it does, why to use it, where to use it, and
-        how it works.
-      </p>
+            <p class="intro-text">
+                A website covering three modern CSS technologies - custom CSS functions, native carosel controls, and z.
+            </p>
 
-      <nav class="topic-nav" aria-label="Technology sections">
-        <a class="topic-card topic-card-one" href="#technology-one">
-          <span class="topic-number">01</span>
-          <span class="topic-title">Tech</span>
-          <span class="topic-note">Jes's Tech</span>
-        </a>
+            <nav class="topic-nav" aria-label="Technology sections">
+                <a class="topic-card topic-card-one" href="#technology-one">
+                    <span class="topic-number">01</span>
+                    <span class="topic-title">Custom CSS Functions</span>
+                    <span class="topic-note">Jes's Tech</span>
+                </a>
 
-        <a class="topic-card topic-card-two" href="#native-carousel-controls">
-          <span class="topic-number">02</span>
-          <span class="topic-title">Native CSS Carousel Controls</span>
-          <span class="topic-note">Craig's Tech</span>
-        </a>
+                <a class="topic-card topic-card-two" href="#native-carousel-controls">
+                    <span class="topic-number">02</span>
+                    <span class="topic-title">Native CSS Carousel Controls</span>
+                    <span class="topic-note">Craig's Tech</span>
+                </a>
 
-        <a class="topic-card topic-card-three" href="#technology-three">
-          <span class="topic-number">03</span>
-          <span class="topic-title">CSS Interpolate Size</span>
-          <span class="topic-note">Timmy's Tech</span>
-        </a>
-      </nav>
+                <a class="topic-card topic-card-three" href="#technology-three">
+                    <span class="topic-number">03</span>
+                    <span class="topic-title">CSS Interpolate Size</span>
+                    <span class="topic-note">Timmy's Tech</span>
+                </a>
+            </nav>
+        </div>
+
+        <picture class="hero-picture">
+            <source
+                    media="(width < 768px)" srcset="images/hero-700w.jpg">
+            <source media="(width >= 768px)" srcset="images/hero-1920w.jpg">
+
+            <img
+                    src="images/hero-1920w.jpg"
+                    class="hero-image"
+                    alt="Closeup of CSS code describing a hero class, heading, and sub-heading.">
+        </picture>
     </div>
-
-    <picture class="hero-picture">
-      <source
-              srcset="images/#"
-              sizes="#"
-              media="#">
-
-      <img
-              class="hero-image"
-              src="images/#"
-              srcset="images/#, images/#"
-              sizes="(max-width: #) calc(#), #"
-              alt="">
-    </picture>
-  </div>
 </header>
 
 <main id="main">
-  <section class="technology-row tech-one" id="technology-one" aria-labelledby="tech-one-title">
-    <div class="row-label">
-      <p>01</p>
-      <h2 id="tech-one-title">Tech</h2>
-    </div>
-
-    <section class="tech-section" id="tech-one-what">
-      <p class="section-label">Jes · What</p>
-      <h3>Technology One </h3>
-
-      <p class="summary">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos hic sed cum ex, possimus veritatis aperiam accusamus fugit neque quia quae nam repellendus aliquam voluptatem? Excepturi cum officiis doloremque praesentium!
-      </p>
-
-      <div class="info-cards">
-        <section>
-          <h4>What is it?</h4>
-          <p>Add the definition here.</p>
-        </section>
-
-        <section>
-          <h4>What does it do?</h4>
-          <p>Add the core function here.</p>
-        </section>
-
-        <section>
-          <h4>Why use it?</h4>
-          <p>Add the practical reason here.</p>
-        </section>
-
-        <section>
-          <h4>Where would you use it?</h4>
-          <p>Add real web use cases here.</p>
-        </section>
-      </div>
-    </section>
-
-    <a class="section-link link-what" href="#tech-one-what">What</a>
-
-    <section class="tech-section" id="tech-one-how">
-      <p class="section-label">Jes · How</p>
-      <h3>How it works</h3>
-
-      <div class="content-box">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos hic sed cum ex, possimus veritatis aperiam accusamus fugit neque quia quae nam repellendus aliquam voluptatem? Excepturi cum officiis doloremque praesentium!</p>
-      </div>
-    </section>
-
-    <a class="section-link link-how" href="#tech-one-how">How</a>
-
-    <section class="tech-section" id="tech-one-demo">
-      <p class="section-label">Jes · Demo</p>
-      <h3>Demo</h3>
-
-      <div class="content-box">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos hic sed cum ex, possimus veritatis aperiam accusamus fugit neque quia quae nam repellendus aliquam voluptatem? Excepturi cum officiis doloremque praesentium!</p>
-      </div>
-    </section>
-
-    <a class="section-link link-demo" href="#tech-one-demo">Demo</a>
-  </section>
-
-  <section class="technology-row tech-two" id="native-carousel-controls" aria-labelledby="tech-two-title">
-    <div class="row-label">
-      <p>02</p>
-      <h2 id="tech-two-title">Native CSS Carousel Controls</h2>
-    </div>
-
-    <section class="tech-section" id="carousel-what">
-      <p class="section-label">Craig · What</p>
-      <h3>Native CSS Carousel Controls</h3>
-
-      <p class="summary">
-        <code>::scroll-button()</code>, <code>::scroll-marker</code>, and
-        <code>scroll-marker-group</code> let CSS create carousel arrows and
-        marker navigation for a scroll container. Scroll snap is only the
-        supporting behaviour that makes each slide land cleanly.
-      </p>
-
-      <div class="info-cards">
-        <section>
-          <h4>What is it?</h4>
-          <p>
-            It is an emerging CSS carousel feature set that adds
-            browser-generated controls to scrollable content.
-          </p>
-        </section>
-
-        <section>
-          <h4>What does it do?</h4>
-          <p>
-            It can create previous/next scroll buttons and marker navigation
-            without writing custom JavaScript.
-          </p>
-        </section>
-
-        <section>
-          <h4>Why use it?</h4>
-          <p>
-            It provides a native, accessible, and performant carousel solution
-            with minimal code.
-          </p>
-        </section>
-
-        <section>
-          <h4>Where would you use it?</h4>
-          <p>
-            Product galleries, card shelves, image galleries, onboarding
-            panels, feature tours, and any simple manual carousel.
-          </p>
-        </section>
-      </div>
-    </section>
-
-    <a class="section-link link-what" href="#carousel-what">What</a>
-
-    <section class="tech-section" id="carousel-how">
-      <p class="section-label">Craig · How</p>
-      <h3>How the new CSS works</h3>
-
-      <div class="content-box">
-        <ol>
-          <li>Build the carousel as a normal horizontal scrolling list.</li>
-          <li>Add <code>scroll-snap-type</code> so slides stop cleanly.</li>
-          <li>Add <code>scroll-marker-group: after;</code> for marker navigation.</li>
-          <li>Use <code>::scroll-button(left)</code> for the previous button.</li>
-          <li>Use <code>::scroll-button(right)</code> for the next button.</li>
-          <li>Use <code>::scroll-marker</code> on each slide for markers.</li>
-          <li>Use <code>:target-current</code> to style the active marker.</li>
-        </ol>
-      </div>
-    </section>
-
-    <a class="section-link link-how" href="#carousel-how">How</a>
-
-    <section class="tech-section" id="carousel-demo">
-      <p class="section-label">Craig · Demo</p>
-      <h3>Demo</h3>
-
-      <div class="content-box">
-        <p>
-          Add the demo here. The demo should be a working example of a carousel using the new native CSS controls, with some sample content to show how it works in practice.
-        </p>
-      </div>
-    </section>
-
-    <a class="section-link link-demo" href="#carousel-demo">Demo</a>
-  </section>
-
-  <section class="technology-row tech-three" id="technology-three" aria-labelledby="tech-three-title">
-    <div class="row-label">
-      <p>03</p>
-      <h2 id="tech-three-title">Tech</h2>
-    </div>
-
-    <section class="tech-section" id="tech-three-what">
-      <p class="section-label">Timmy · What</p>
-      <h3>CSS Interpolate Size</h3>
-
-      <p class="summary">
-        The CSS interpolate-size property makes it possible to for transitions and/or animations between "length-percentage" values and intrinsic size keywords like fit-content or max-content.
-      </p>
-
-      <div class="info-cards">
-        <section>
-          <h4>What is it?</h4>
-          <p>It is a CSS property that enables animation transitions between fixed length and intrinsic sized elements.</p>
-        </section>
-
-        <section>
-          <h4>What does it do?</h4>
-          <p>It opts an element into allowing transitions and animations when one of the values is an intrinsic size, such as auto.</p>
-        </section>
-
-        <section>
-          <h4>Why use it?</h4>
-          <p>Allows transitions or animations between elements even if they are not interpolate</p>
-        </section>
-
-        <section>
-          <h4>Where would you use it?</h4>
-          <p>A common use case is animating a hamburger menu from height: 0 to height: auto, allowing the menu to expand smoothly based on its content.</p>
-        </section>
-      </div>
-    </section>
-
-    <a class="section-link link-what" href="#tech-three-what">What</a>
-
-    <section class="tech-section" id="tech-three-how">
-      <p class="section-label">Timmy · How</p>
-      <h3>How it works</h3>
-
-      <div class="content-box">
-        <ol>
-          <li>Create a div with the class ".element". You can call the class whatever you want, “element” will be the example.</li>
-          <li>In the Body of CSS, add “height: 0;”. This is to mark the starting point of the animation.</li>
-          <li>Create the CSS Ruleset: “.element” into the CSS code. Add the following properties to the Ruleset: "height: 2.5rem", “overflow-hidden”, and “transition: height 2s ease”. This basically determines the animation when interacted with.</li>
-          <li>Create a CSS Ruleset: ".element:hover", and ".element:open" state.</li>
-          <li>In the new CSS Ruleset, add "height: auto;". This property allows the info to show upon interaction.</li>
-          <li>Notice that the transition snaps because auto is an intrinsic size and cannot normally be interpolated. In other words, hovering over the “Info About Me” instantly shows the info instead of performing an animation.</li>
-          <li>Create another CSS Ruleset: ":root". Root in CSS is a property that targets the entire HTML code, it also enables all intrinsic size keywords to be transitioned and have animations.</li>
-          <li>Add "interpolate-size: allow-keywords" to your “:root” CSS Ruleset.</li>
-          <li>The height now transitions smoothly and follows the specified easing function.</li>
-        </ol>
-      </div>
-    </section>
-
-    <a class="section-link link-how" href="#tech-three-how">How</a>
-
-    <section class="tech-section" id="tech-three-demo">
-      <p class="section-label">Timmy · Demo</p>
-      <h3>Demo</h3>
-
-      <div class="content-box">
-        <div class="element">
-          <section tabindex="0">
-            <header>
-              <h2>Info About Me</h2>
-            </header>
-            <main>
-              <p>Hello, my name is Timmy Tran!</p>
-              <ul>
-                <li><strong>Birthday:</strong> 01/01/2003</li>
-                <li><strong>Age:</strong> 23</li>
-                <li><strong>Likes:</strong> Gaming & Gym</li>
-                <li><strong>Dislikes:</strong> Anything too complicated</li>
-              </ul>
-            </main>
-          </section>
+    <section class="technology-row tech-one" id="technology-one" aria-labelledby="tech-one-title">
+        <div class="row-label">
+            <p>01</p>
+            <h2 id="tech-one-title">if() function</h2>
         </div>
-      </div>
+
+        <section class="tech-section" id="tech-one-what">
+            <p class="section-label">Jes · What</p>
+            <h3>if() function</h3>
+
+            <p class="summary">
+                CSS custom functions are used to set paramaters, define variables, and call the result.  The <code>if()</code> function adds inline conditionals to customize style, media, or supports queries.
+
+            <div class="info-cards">
+                <section>http://127.0.0.1:5500
+                    <h4>What is it?</h4>
+                    <p>The <code>if()</code> function gives conditional logic to CSS property values.</p>
+                </section>
+
+                <section>
+                    <h4>What does it do?</h4>
+                    <p>Used to test a CSS property against a condition.</p>
+                </section>
+
+                <section>
+                    <h4>Why use it?</h4>
+                    <p>Abbrieviates CSS , creating shorter files that are easier to read.</p>
+                </section>
+
+                <section>
+                    <h4>Where would you use it?</h4>
+                    <p>Adjust property values based on user selections, viewport size, or browser.</p>
+                </section>
+            </div>
+        </section>
+
+        <a class="section-link link-what" href="#tech-one-what">What</a>
+
+        <section class="tech-section" id="tech-one-how">
+            <p class="section-label">Jes · How</p>
+            <h3>How it Works</h3>
+
+            <div class="content-box">
+                <ol>
+                    <li>Choose a CSS property.</li>
+                    <li>Create a conditional <code>if()</code> function.</li>
+                    <ol type="a">
+                        <li>Use <code>style()</code> to check custom properties.</li>
+                        <li>Use <code>media()</code> to adjust based on the viewport.</li>
+                        <li>Use <code>supports()</code> to change the property based on what the browser supports.  This one must end with an <code>else: value</code>pair.</li>
+                    </ol>
+                    <li>The property will be set to the value of the first true condition found.</li>
+                </ol>
+            </div>
+        </section>
+
+        <a class="section-link link-how" href="#tech-one-how">How</a>
+
+        <section class="tech-section" id="tech-one-demo">
+            <p class="section-label">Jes · Demo</p>
+            <h3>Demo</h3>
+
+            <div class="content-box">
+
+                <p>Adjusting theme colours based on user selection and change flex-direction depending on the viewport width using a custom function and <code>if()</code>.</p>
+
+            </div>
+        </section>
+
+        <a class="section-link link-demo" href="#tech-one-demo">Demo</a>
+
     </section>
 
-    <a class="section-link link-demo" href="#tech-three-demo">Demo</a>
-  </section>
+    <section class="technology-row tech-two" id="native-carousel-controls" aria-labelledby="tech-two-title">
+        <div class="row-label">
+            <p>02</p>
+            <h2 id="tech-two-title">Native CSS Carousel Controls</h2>
+        </div>
 
-  <section class="sources" aria-labelledby="sources-title">
-    <div>
-      <p class="section-label">Sources</p>
-      <h2 id="sources-title">Research links</h2>
-    </div>
+        <section class="tech-section" id="carousel-what">
+            <p class="section-label">Craig · What</p>
+            <h3>Native CSS Carousel Controls</h3>
 
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Overflow/Carousels">MDN: Creating CSS carousels</a></li>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button">MDN: ::scroll-button()</a></li>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-marker">MDN: ::scroll-marker</a></li>
-      <li><a href="https://developer.chrome.com/blog/carousels-with-css">Chrome Developers: Carousels with CSS</a></li>
-      <li><a href="https://www.youtube.com/watch?v=JN-nme9oF10">Youtube: This new CSS property just solved animating to height auto</a></li>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/interpolate-size">MDN: interpolate-size CSSS Property</a></li>
-      <li><a href="https://css-tricks.com/almanac/properties/i/interpolate-size/">Interpolate-Size | CSS-Tricks</a></li>
-      <li><a href="https://iprodan.dev/l/interpolate-size/">iprodan | interpolate-size</a></li>
-    </ul>
-  </section>
+            <p class="summary"><code>::scroll-button()</code>, <code>::scroll-marker</code>, and <code>scroll-marker-group</code> let CSS add carousel buttons and marker navigation to a scroll container. The key benefit is that the browser creates stateful controls with roles, tab order, focus behaviour, and active states, instead of leaving all of that work to custom JavaScript.</p>
+
+            <div class="info-cards">
+                <section>
+                    <h4>What is it?</h4>
+                    <p>
+                        A CSS feature set for adding browser-generated scroll buttons and
+                        marker navigation to a scroll container.
+                    </p>
+                </section>
+
+                <section>
+                    <h4>What does it do?</h4>
+                    <p><code>::scroll-button(left)</code> and <code>::scroll-button(right)</code> create previous and next buttons. <code>scroll-marker-group</code> and <code>::scroll-marker</code> create dot or label navigation.</p>
+                </section>
+
+                <section>
+                    <h4>Why use it?</h4>
+                    <p>It can reduce custom JavaScript while keeping the carousel as a normal scroll area. Because the controls are browser-generated, accessibility details such as keyboard access, roles, state, and focus behaviour are handled more consistently.</p>
+                </section>
+
+                <section>
+                    <h4>Where would you use it?</h4>
+                    <p>Product galleries, card shelves, image galleries, onboarding panels, feature tours, and any simple manual carousel.</p>
+                </section>
+            </div>
+        </section>
+
+        <a class="section-link link-what" href="#carousel-what">What</a>
+
+        <section class="tech-section" id="carousel-how">
+            <p class="section-label">Craig · How</p>
+            <h3>How the new CSS builds up</h3>
+
+            <div class="content-box">
+                <p>Native CSS carousel controls start with a normal scroll container. Then CSS adds browser-generated controls around that scroller: <code>::scroll-button(left)</code>, <code>::scroll-button(right)</code>, <code>scroll-marker-group</code>, <code>::scroll-marker</code>, and <code>:target-current</code>.</p>
+                <ol>
+                    <li><strong>Start with a scroller. </strong>Use <code>display: flex</code> and <code>overflow-x: auto</code> so the square tiles become a horizontal scroll area.</li>
+                    <li><strong>Add scroll snap. </strong>Use <code>scroll-snap-type: x mandatory</code> on the scroller and <code>scroll-snap-align: center</code> on each tile so the carousel stops cleanly.</li>
+                    <li><strong>Add scroll buttons. </strong>Use <code>::scroll-button(left)</code> and <code>::scroll-button(right)</code> so the browser creates previous and next buttons.</li>
+                    <li><strong>Add button content. </strong>Use <code>content</code> to place the visible arrows and accessible fallback labels, such as <code>"⬅" / "Scroll Left"</code>.</li>
+                    <li><strong>Add scroll markers. </strong>Use <code>scroll-marker-group: after</code> to create the marker area, then use <code>::scroll-marker</code> on the tiles to create dot navigation.</li>
+                    <li><strong>Style the current marker. </strong>Use <code>:target-current</code> so the active dot changes when that tile is current.</li>
+                    <li><strong>Combine the controls. </strong>The final demo uses the scroller, snap points, side buttons, and dot markers together without custom JavaScript.</li>
+                </ol>
+            </div>
+        </section>
+
+        <a class="section-link link-how" href="#carousel-how">How</a>
+        <section class="tech-section" id="carousel-demo">
+            <p class="section-label">Craig · Demo</p>
+            <h3>Build-up demo</h3>
+            <div class="content-box">
+                <p>The demo builds the carousel in stages: first a normal horizontal scroller, then scroll snap, then browser-generated previous/next buttons, then browser-generated dot markers, and finally both controls together. The outlined square tiles make the scrolling behaviour easy to see.</p>
+            </div>
+            <div class="carousel-steps">
+                <section class="carousel-step">
+                    <div class="carousel-step-text">
+                        <p class="section-label">Step 1</p>
+                        <h4>Start with a scroller</h4>
+                        <p>
+                            The base pattern is just a horizontal list with overflow and
+                            scroll snap. This still works even if the new carousel controls
+                            are unsupported.
+                        </p>
+                    </div>
+                    <div class="carousel-demo-grid">
+                        <div class="carousel-showcase">
+                            <ul aria-label="Basic horizontal scroller example" class="demo-carousel demo-carousel-basic">
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                            </ul>
+                        </div>
+                        <pre class="demo-code"><code>.carousel {
+        display: flex;
+        gap: 1rem;
+        <span class="code-highlight">overflow-x: auto;</span>
+        <span class="code-highlight">scroll-snap-type: x mandatory;</span>
+      }
+
+      .carousel &gt; li {
+        <span class="code-highlight">flex: 0 0 10rem;</span>
+        width: 10rem;
+        height: 10rem;
+        border: 3px solid currentColor;
+        <span class="code-highlight">scroll-snap-align: center;</span>
+      }</code></pre>
+                    </div>
+                </section>
+                <section class="carousel-step">
+                    <div class="carousel-step-text">
+                        <p class="section-label">Step 2</p>
+                        <h4>Add scroll buttons</h4>
+                        <p><code>::scroll-button(left)</code> and <code>::scroll-button(right)</code> let CSS ask the browser to create previous and next buttons for the scroll area. These browser-created buttons page through most of the scroll area.</p>
+                    </div>
+                    <div class="carousel-demo-grid">
+                        <div class="carousel-showcase">
+                            <ul aria-label="Carousel with scroll buttons example" class="demo-carousel demo-carousel-buttons">
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                            </ul>
+                        </div>
+                        <pre class="demo-code"><code>.carousel<span class="code-highlight">::scroll-button(left)</span> {
+        <span class="code-highlight">content: "⬅" / "Scroll Left";</span>
+      }
+
+      .carousel<span class="code-highlight">::scroll-button(right)</span> {
+        <span class="code-highlight">content: "⮕" / "Scroll Right";</span>
+      }
+
+      .carousel::scroll-button(*)<span class="code-highlight">:focus-visible</span> {
+        outline-offset: 5px;
+      }</code></pre>
+                    </div>
+                </section>
+                <section class="carousel-step">
+                    <div class="carousel-step-text">
+                        <p class="section-label">Step 3</p>
+                        <h4>Add scroll markers</h4>
+                        <p>
+                            <code>scroll-marker-group</code> creates the marker area, and
+                            <code>::scroll-marker</code> creates a marker for selected
+                            scroll items. <code>:target-current</code> styles the active
+                            marker.
+                        </p>
+                    </div>
+                    <div class="carousel-demo-grid">
+                        <div class="carousel-showcase">
+                            <ul aria-label="Carousel with scroll markers example" class="demo-carousel demo-carousel-markers">
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                            </ul>
+                        </div>
+                        <pre class="demo-code"><code>.carousel {
+        <span class="code-highlight">scroll-marker-group: after;</span>
+      }
+
+      .carousel &gt; li<span class="code-highlight">::scroll-marker</span> {
+        <span class="code-highlight">content: " ";</span>
+      }
+
+      .carousel &gt; li::scroll-marker<span class="code-highlight">:target-current</span> {
+        background: currentColor;
+      }</code></pre>
+                    </div>
+                </section>
+                <section class="carousel-step">
+                    <div class="carousel-step-text">
+                        <p class="section-label">Step 4</p>
+                        <h4>Use both together</h4>
+                        <p>
+                            The full version combines the basic scroller, scroll snap,
+                            buttons, and markers. The new controls are wrapped in
+                            support checks so unsupported browsers still get the
+                            horizontal scroller.
+                        </p>
+                    </div>
+                    <div class="carousel-demo-grid">
+                        <div class="carousel-showcase">
+                            <ul aria-label="Carousel with scroll buttons and markers example" class="demo-carousel demo-carousel-complete">
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                                <li aria-hidden="true"></li>
+                            </ul>
+                        </div>
+                        <pre class="demo-code"><code>.carousel {
+        scroll-snap-type: x mandatory;
+        <span class="code-highlight">scroll-marker-group: after;</span>
+      }
+
+      .carousel<span class="code-highlight">::scroll-button(left)</span> {
+        <span class="code-highlight">content: "⬅" / "Scroll Left";</span>
+      }
+
+      .carousel<span class="code-highlight">::scroll-button(right)</span> {
+        <span class="code-highlight">content: "⮕" / "Scroll Right";</span>
+      }
+
+      .carousel &gt; li<span class="code-highlight">::scroll-marker</span> {
+        <span class="code-highlight">content: " ";</span>
+      }</code></pre>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <a class="section-link link-demo" href="#carousel-demo">Demo</a>
+    </section>
+
+    <section class="technology-row tech-three" id="technology-three" aria-labelledby="tech-three-title">
+        <div class="row-label">
+            <p>03</p>
+            <h2 id="tech-three-title">Tech</h2>
+        </div>
+
+        <section class="tech-section" id="tech-three-what">
+            <p class="section-label">Timmy · What</p>
+            <h3>CSS Interpolate Size</h3>
+
+            <p class="summary">
+                The CSS interpolate-size property makes it possible to for transitions and/or animations between "length-percentage" values and intrinsic size keywords like fit-content or max-content.
+            </p>
+
+            <div class="info-cards">
+                <section>
+                    <h4>What is it?</h4>
+                    <p>It is a CSS property that enables animation transitions between fixed length and intrinsic sized elements.</p>
+                </section>
+
+                <section>
+                    <h4>What does it do?</h4>
+                    <p>It opts an element into allowing transitions and animations when one of the values is an intrinsic size, such as auto.</p>
+                </section>
+
+                <section>
+                    <h4>Why use it?</h4>
+                    <p>Allows transitions or animations between elements even if they are not interpolate</p>
+                </section>
+
+                <section>
+                    <h4>Where would you use it?</h4>
+                    <p>A common use case is animating a hamburger menu from height: 0 to height: auto, allowing the menu to expand smoothly based on its content.</p>
+                </section>
+            </div>
+        </section>
+
+        <a class="section-link link-what" href="#tech-three-what">What</a>
+
+        <section class="tech-section" id="tech-three-how">
+            <p class="section-label">Timmy · How</p>
+            <h3>How it works</h3>
+
+            <div class="content-box">
+                <ol>
+                    <li>Create a div with the class ".element". You can call the class whatever you want, “element” will be the example.</li>
+                    <li>In the Body of CSS, add “height: 0;”. This is to mark the starting point of the animation.</li>
+                    <li>Create the CSS Ruleset: “.element” into the CSS code. Add the following properties to the Ruleset: "height: 2.5rem", “overflow-hidden”, and “transition: height 2s ease”. This basically determines the animation when interacted with.</li>
+                    <li>Create a CSS Ruleset: ".element:hover", and ".element:open" state.</li>
+                    <li>In the new CSS Ruleset, add "height: auto;". This property allows the info to show upon interaction.</li>
+                    <li>Notice that the transition snaps because auto is an intrinsic size and cannot normally be interpolated. In other words, hovering over the “Info About Me” instantly shows the info instead of performing an animation.</li>
+                    <li>Create another CSS Ruleset: ":root". Root in CSS is a property that targets the entire HTML code, it also enables all intrinsic size keywords to be transitioned and have animations.</li>
+                    <li>Add "interpolate-size: allow-keywords" to your “:root” CSS Ruleset.</li>
+                    <li>The height now transitions smoothly and follows the specified easing function.</li>
+                </ol>
+            </div>
+        </section>
+
+        <a class="section-link link-how" href="#tech-three-how">How</a>
+
+        <section class="tech-section" id="tech-three-demo">
+            <p class="section-label">Timmy · Demo</p>
+            <h3>Demo</h3>
+
+            <div class="content-box">
+                <div class="element">
+                    <section tabindex="0">
+                        <header>
+                            <h2>Info About Me</h2>
+                        </header>
+                        <main>
+                            <p>Hello, my name is Timmy Tran!</p>
+                            <ul>
+                                <li><strong>Birthday:</strong> 01/01/2003</li>
+                                <li><strong>Age:</strong> 23</li>
+                                <li><strong>Likes:</strong> Gaming & Gym</li>
+                                <li><strong>Dislikes:</strong> Anything too complicated</li>
+                            </ul>
+                        </main>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <a class="section-link link-demo" href="#tech-three-demo">Demo</a>
+    </section>
+
+    <section class="sources" aria-labelledby="sources-title">
+        <div>
+            <p class="section-label">Sources</p>
+            <h2 id="sources-title">Research links</h2>
+        </div>
+
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Overflow/Carousels">MDN: Creating CSS carousels</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button">MDN: ::scroll-button()</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-marker">MDN: ::scroll-marker</a></li>
+            <li><a href="https://developer.chrome.com/blog/carousels-with-css">Chrome Developers: Carousels with CSS</a></li>
+            <li><a href="https://www.youtube.com/watch?v=JN-nme9oF10">Youtube: This new CSS property just solved animating to height auto</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/interpolate-size">MDN: interpolate-size CSSS Property</a></li>
+            <li><a href="https://css-tricks.com/almanac/properties/i/interpolate-size/">Interpolate-Size | CSS-Tricks</a></li>
+            <li><a href="https://iprodan.dev/l/interpolate-size/">iprodan | interpolate-size</a></li>
+        </ul>
+    </section>
 </main>
 
 <footer class="site-footer">
-  <p>Team Five: Jes, Craig, Timmy · FWDP 2000 · June 02, 2026</p>
+    <p>Team Five: Jes, Craig, Timmy · FWDP 2000 · June 02, 2026</p>
 </footer>
 </body>
 </html>
