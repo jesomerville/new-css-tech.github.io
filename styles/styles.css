@@ -422,3 +422,22 @@ main {
     gap: 1.5rem;
   }
 }
+
+body {
+  height: 0;
+}
+
+:root {
+  interpolate-size: allow-keywords;
+}
+
+.element {
+  height: 2.5rem;
+  overflow: hidden;
+  transition: height 2s ease;
+}
+
+.element:hover,
+.element:open {
+  height: auto;
+}
