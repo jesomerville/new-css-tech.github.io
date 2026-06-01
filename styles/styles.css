@@ -371,12 +371,21 @@ main {
   margin-top: 1rem;
 }
 
-/* The wrapper reserves side space for generated buttons. */
+.tech-two .carousel-step,
+.tech-two .carousel-demo-grid,
+.tech-two .carousel-showcase,
+.tech-two .demo-carousel,
+.tech-two .demo-code {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* The wrapper holds the carousel demo and gains side space for buttons on wider screens. */
 .tech-two .carousel-showcase {
   position: relative;
   max-width: 48rem;
   margin: 0 auto;
-  padding: 0 4.25rem 1rem;
+  padding-bottom: 1rem;
 }
 
 .tech-two .demo-carousel {
@@ -484,6 +493,11 @@ main {
 /* On wider screens, anchor the generated buttons beside the scroll window. */
 @media (min-width: 48em) {
   @supports (anchor-name: --carousel-window) and (position-area: center left) {
+    .tech-two .carousel-showcase {
+      padding-left: 4.25rem;
+      padding-right: 4.25rem;
+    }
+
     .tech-two .demo-carousel-buttons::scroll-button(left),
     .tech-two .demo-carousel-buttons::scroll-button(right),
     .tech-two .demo-carousel-complete::scroll-button(left),
@@ -519,8 +533,10 @@ main {
 .tech-two .demo-carousel-markers::scroll-marker-group,
 .tech-two .demo-carousel-complete::scroll-marker-group {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
+  max-width: 100%;
   margin-top: 0.75rem;
 }
 
