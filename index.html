@@ -226,7 +226,7 @@
       <h3>CSS Interpolate Size</h3>
 
       <p class="summary">
-        The CSS interpolate-size property makes it possible to for transitions and/or animations between <length-percentage> values and intrinsic size keywords like fit-content or max-content.
+        The CSS interpolate-size property makes it possible to for transitions and/or animations between "length-percentage" values and intrinsic size keywords like fit-content or max-content.
       </p>
 
       <div class="info-cards">
@@ -260,14 +260,14 @@
 
       <div class="content-box">
         <ol>
-          <li>Create a div with the class ".element" (class name placeholder).</li>
-          <li>In the Body of CSS, add: height: 0;.</li>
-          <li>Add a transition: "transition: height 2s ease" to your class div.</li>
-          <li>Create a CSS Ruleset: ".element.open" state.</li>
-          <li>In the new CSS Ruleset, add "height: auto;".</li>
-          <li>Notice that the transition snaps because auto is an intrinsic size and cannot normally be interpolated.</li>
-          <li>Create another CSS Ruleset: ":root".</li>
-          <li>Add "interpolate-size: allow-keywords" to your root CSS Ruleset.</li>
+          <li>Create a div with the class ".element". You can call the class whatever you want, “element” will be the example.</li>
+          <li>In the Body of CSS, add “height: 0;”. This is to mark the starting point of the animation.</li>
+          <li>Create the CSS Ruleset: “.element” into the CSS code. Add the following properties to the Ruleset: "height: 2.5rem", “overflow-hidden”, and “transition: height 2s ease”. This basically determines the animation when interacted with.</li>
+          <li>Create a CSS Ruleset: ".element:hover", and ".element:open" state.</li>
+          <li>In the new CSS Ruleset, add "height: auto;". This property allows the info to show upon interaction.</li>
+          <li>Notice that the transition snaps because auto is an intrinsic size and cannot normally be interpolated. In other words, hovering over the “Info About Me” instantly shows the info instead of performing an animation.</li>
+          <li>Create another CSS Ruleset: ":root". Root in CSS is a property that targets the entire HTML code, it also enables all intrinsic size keywords to be transitioned and have animations.</li>
+          <li>Add "interpolate-size: allow-keywords" to your “:root” CSS Ruleset.</li>
           <li>The height now transitions smoothly and follows the specified easing function.</li>
         </ol>
       </div>
@@ -280,7 +280,22 @@
       <h3>Demo</h3>
 
       <div class="content-box">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat suscipit magni aliquam, explicabo error nesciunt nam obcaecati magnam ut labore atque neque aperiam voluptatem excepturi esse, sapiente, eveniet officia qui.</p>
+        <div class="element">
+          <section tabindex="0">
+            <header>
+              <h2>Info About Me</h2>
+            </header>
+            <main>
+              <p>Hello, my name is Timmy Tran!</p>
+              <ul>
+                <li><strong>Birthday:</strong> 01/01/2003</li>
+                <li><strong>Age:</strong> 23</li>
+                <li><strong>Likes:</strong> Gaming & Gym</li>
+                <li><strong>Dislikes:</strong> Anything too complicated</li>
+              </ul>
+            </main>
+          </section>
+        </div>
       </div>
     </section>
 
@@ -298,6 +313,10 @@
       <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button">MDN: ::scroll-button()</a></li>
       <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-marker">MDN: ::scroll-marker</a></li>
       <li><a href="https://developer.chrome.com/blog/carousels-with-css">Chrome Developers: Carousels with CSS</a></li>
+      <li><a href="https://www.youtube.com/watch?v=JN-nme9oF10">Youtube: This new CSS property just solved animating to height auto</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/interpolate-size">MDN: interpolate-size CSSS Property</a></li>
+      <li><a href="https://css-tricks.com/almanac/properties/i/interpolate-size/">Interpolate-Size | CSS-Tricks</a></li>
+      <li><a href="https://iprodan.dev/l/interpolate-size/">iprodan | interpolate-size</a></li>
     </ul>
   </section>
 </main>
