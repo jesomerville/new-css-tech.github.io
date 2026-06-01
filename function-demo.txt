@@ -1,0 +1,12 @@
+.function-demo {
+    background-color: if(
+        style(--theme: dark): #0c1021;
+        style(--theme: light): #f8f7ef;
+        else: #0fc6c2;
+    );
+    color: if(
+        style(--theme: dark): #f8f7ef;
+        style(--theme: light): #0c1021;
+        else: #0c1021;
+    )
+}
