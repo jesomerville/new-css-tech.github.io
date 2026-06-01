@@ -49,16 +49,13 @@
 
       <picture class="hero-picture">
         <source
-          srcset="images/#"
-          sizes="#"
-          media="#">
+          media="(width < 768px)" srcset="images/hero-700w.jpg">
+        <source media="(width >= 768px)" srcset="images/hero-1920w.jpg">
 
         <img
+          src="images/hero-1920w.jpg"
           class="hero-image"
-          src="images/#"
-          srcset="images/#, images/#"
-          sizes="(max-width: #) calc(#), #"
-          alt="">
+          alt="Closeup of CSS code describing a hero class, heading, and sub-heading.">
       </picture>
     </div>
   </header>

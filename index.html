@@ -49,16 +49,13 @@
 
       <picture class="hero-picture">
         <source
-          srcset="images/#"
-          sizes="#"
-          media="#">
+          media="(width < 768px)" srcset="images/hero-700w.jpg">
+        <source media="(width >= 768px)" srcset="images/hero-1920w.jpg">
 
         <img
+          src="images/hero-1920w.jpg"
           class="hero-image"
-          src="images/#"
-          srcset="images/#, images/#"
-          sizes="(max-width: #) calc(#), #"
-          alt="">
+          alt="Closeup of CSS code describing a hero class, heading, and sub-heading.">
       </picture>
     </div>
   </header>
@@ -78,7 +75,7 @@
           CSS custom functions are used to set paramaters, define variables, and call the result.  The <code>if()</code> function adds inline conditionals to customize style, media, or supports queries.
 
         <div class="info-cards">
-          <section>
+          <section>http://127.0.0.1:5500
             <h4>What is it?</h4>
             <p>The <code>if()</code> function gives conditional logic to CSS property values.</p>
           </section>
@@ -368,7 +365,7 @@
           <section>
             <h4>What is it?</h4>
             <p>Add the definition here.</p>
-          </section>
+          </section>http://127.0.0.1:5500
 
           <section>
             <h4>What does it do?</h4>
@@ -418,45 +415,50 @@
         <h2 id="sources-title">Research Links</h2>
       </div>
 
-      <table class="reference-table">
+      <div class="reference-table">
+        <table>
 
-        <thead>
+          <thead>
+              <tr>
+                <th>Tech One</th>
+                <th>Tech Two</th>
+                <th>Tech Three</th>
+              </tr>
+          </thead>
+
+          <tbody>
             <tr>
-              <th>Tech One</th>
-              <th>Tech Two</th>
-              <th>Tech Three</th>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Overflow/Carousels">MDN: Creating CSS carousels</a></td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/if">MDN: if() CSS Function</a></td>
+                <td></td>
             </tr>
-        </thead>
 
-        <tbody>
-          <tr>
-              <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Overflow/Carousels">MDN: Creating CSS carousels</a></td>
-              <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/if">MDN: if() CSS Function</a></td>
-              <td></td>
-          </tr>
+            <tr>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button">MDN: ::scroll-button()</a></td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Custom_functions_and_mixins/Using_custom_functions">MDN: Using CSS Custom Functions</a></td>
+                <td></td>
+            </tr>
 
-          <tr>
-              <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button">MDN: ::scroll-button()</a></td>
-              <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Custom_functions_and_mixins/Using_custom_functions">MDN: Using CSS Custom Functions</a></td>
-              <td></td>
-          </tr>
+            <tr>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-marker">MDN: ::scroll-marker</a></td>
+                <td><a href="https://www.youtube.com/watch?v=svqu6FDiMAs&list=PLwdxEUTBzNh4LAn5dIlaIlFhHs1AWslc2&index=7&t=417s">YouTube: 10 NEW CSS Features You Need To Know For 2026</a></td>
+                <td></td>
+            </tr>
 
-          <tr>
-              <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-marker">MDN: ::scroll-marker</a></td>
-              <td><a href="https://www.youtube.com/watch?v=svqu6FDiMAs&list=PLwdxEUTBzNh4LAn5dIlaIlFhHs1AWslc2&index=7&t=417s">YouTube: 10 NEW CSS Features You Need To Know For 2026</a></td>
-              <td></td>
-          </tr>
+            <tr>
+                <td><a href="https://developer.chrome.com/blog/carousels-with-css">Chrome Developers: Carousels with CSS</a></td>
+                <td></td>
+                <td></td>
+            </tr>
 
-          <tr>
-              <td><a href="https://developer.chrome.com/blog/carousels-with-css">Chrome Developers: Carousels with CSS</a></td>
-              <td></td>
-              <td></td>
-          </tr>
+            <tr>
+              <th class="table-foot" colspan="3">Photo by <a href="https://unsplash.com/@flowforfrank?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ferenc Almasi</a> on <a href="https://unsplash.com/photos/text-NzERTNpnaDw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></th>
+            </tr>
 
-        </tbody>
+          </tbody>
 
-      </table>
-
+        </table>
+      </div>
     </section>
   </main>
 
