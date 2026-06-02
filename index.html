@@ -18,6 +18,10 @@
 
   <link rel="stylesheet" href="styles/normalize-fwd.css">
   <link rel="stylesheet" href="styles/styles.css">
+
+  <!-- function script -->
+  <script src="scripts/script.js" defer></script>
+
 </head>
 
 <body>
@@ -31,7 +35,7 @@
         <h1>New CSS Tech</h1>
 
         <p class="intro-text">
-          A website covering three modern CSS technologies - custom CSS functions, native carosel controls, and z.
+          A website covering three modern CSS technologies - custom CSS functions, native carousel controls, and z.
         </p>
 
         <nav class="topic-nav" aria-label="Technology sections">
@@ -56,11 +60,10 @@
       </div>
 
       <picture class="hero-picture">
-        <source media="(width < 768px)" srcset="images/hero-700w.jpg">
-        <source media="(width >= 768px)" srcset="images/hero-1920w.jpg">
-
+        <source media="(max-width: 700px)" srcset="images/hero-700w.jpg">
+        <source srcset="images/hero-1920w.jpg">
         <img
-          src="images/hero-1920w.jpg" 
+          src="images/hero-1920w.jpg"
           class="hero-image"
           alt="Closeup of CSS code describing a hero class, heading, and sub-heading.">
       </picture>
@@ -69,45 +72,55 @@
   </header>
 
   <main id="main">
+
     <section class="technology-row tech-one" id="if-function" aria-labelledby="tech-one-title">
       <div class="row-label">
         <p>01</p>
-        <h2 id="function-title">if() function</h2>
+        <h2 id="tech-one-title">if() function</h2>
       </div>
 
-      <article class="tech-section" id="function-what">
+      <section class="tech-section" id="function-what">
         <p class="section-label">Jes · What</p>
         <h3>if() function</h3>
 
         <p class="summary">
-          CSS custom functions are used to set paramaters, define variables, and call the result.  The <code>if()</code> function adds inline conditionals to customize style, media, or supports queries.
+          CSS custom functions are used to set paramaters, define variables, and call the result.  The <code>if()</code> function adds inline conditionals to customize three queries: <code>@container</code> style-features, <code>@media</code>, or <code>@supports</code>.
+        </p>
 
         <div class="info-cards">
           <section>
             <h4>What is it?</h4>
-            <p>The <code>if()</code> function gives conditional logic to CSS property values, allowing changes without adding script files.</p>
+            <p>
+              The <code>if()</code> function gives conditional logic to CSS property values, allowing changes without adding script files.
+            </p>
           </section>
 
           <section>
             <h4>What does it do?</h4>
-            <p>Uses <code>if-test : value</code> and <code>else : value</code> pairs to test a CSS property against a condition.</p>
+            <p>
+              Uses <code>if-test : value</code> and <code>else : value</code> pairs to test a CSS property against a condition.
+            </p>
           </section>
 
           <section>
             <h4>Why use it?</h4>
-            <p>Abbrieviates CSS code necessary for styling, creating shorter files that are easier to read.</p>
+            <p>
+              Abbrieviates CSS code necessary for styling, creating shorter files that are easier to read.
+            </p>
           </section>
 
           <section>
             <h4>Where would you use it?</h4>
-            <p>Adjust property values based on user selections, viewport size, or browser.</p>
+            <p>
+              Automatically adjust CSS property values based on user selections, viewport size, or browser.
+            </p>
           </section>
         </div>
-      </article>
+      </section>
 
       <a class="section-link link-what" href="#function-what">What</a>
 
-      <article class="tech-section" id="function-how">
+      <section class="tech-section" id="function-how">
         <p class="section-label">Jes · How</p>
         <h3>Conditional Logic Return</h3>
 
@@ -123,73 +136,82 @@
             <li>The property will be set to the value of the first true condition found.</li>
           </ol>
         </div>
-      </article>
+      </section>
 
       <a class="section-link link-how" href="#function-how">How</a>
 
-      <article class="tech-section" id="function-demo">
+      <section class="tech-section" id="function-demo">
         <p class="section-label">Jes · Demo</p>
-        <h3>Theme & Flex-Direction</h3>
+        <h3>Changing Theme</h3>
+        <div class="content-box">
+          <p>
+            Using <code>if()</code> in conjunction with the CSS <code>var()</code> function, we can set the site's colours to change according to the user's selection.
+          </p>
+        </div>
 
         <div class="function-steps">
-
-          <div class="function-step">
+          <section class="function-step">
             <div class="function-step-text">
-              <h4>Demo Plan:</h4>
-              <p>Set CSS to automatically adjust theme colours based on user selection. Also, change flex-direction depending on the viewport width using a custom function and <code>if()</code>, and set the CSS fallback value for unsupported browsers.</p> 
+              <p class="section-label"></p>
+              <h4></h4>
+              <p></p>
             </div>
+            
+            <div class="function-demo-grid">
+              <div class="function-showcase" id="theme-change">
 
-              <pre class="demo-code"><code>.function-demo {
+                <button class="theme-button active" type="button" value="light">
+                  Light
+                </button>
+
+                <button class="theme-button" type="button" value="dark">
+                  Dark
+                </button>
+
+              </div>
+              <pre class="demo-code">
+  <code>#theme-change {
+    --theme: light;
+
     background-color: if(
-      style(--theme: dark): #0c1021;
+        style(--theme: dark): #0c1021;
+        style(--theme: light): #0fc6c2;
+      );
+      color: if(
+        style(--theme: dark): #f8f7ef;
+        style(--theme: light): #0c1021;
+      );
+  }
+
+  .theme-button {
+    padding: 0.5rem 1rem;
+    border: solid #0c1021;
+    border-radius: 2rem;
+    cursor: pointer;
+  }
+  
+  .theme-button.active {
+    font-weight: bold;
+    border: if(
+      style(--theme: dark): thick solid #f8f7ef;
+      style(--theme: light): thick solid #6d28d9;
+    );
+    background-color: if(
+      style(--theme: dark): #6d28d9;
       style(--theme: light): #f8f7ef;
-      else: #0fc6c2;
     );
     color: if(
       style(--theme: dark): #f8f7ef;
       style(--theme: light): #0c1021;
-      else: #0c1021;
     );
-    flex-direction: if(
-      media(width >= 300px): row;
-      else: column;
-    );
-}</code>
-            </pre>
-
-          <img class="function-showcase" src="images/function-demo-400w.png" alt="Browser compatibility table for the if() CSS function">
-
-        </div>
-
-        <div class="function-step">
-              <p  class="function-step-text" id="section-label">Step 1</p>
-                <h4 class="function-step-text">Step Heading</h4>
-                  <p class="function-step-text">
-                    Step paragraph text.
-                  </p>
-
-            <div class="function-demo-grid">
-
-              <div class="function-showcase">
-                <p>put a visual here</p>
-              </div>
-
-              <pre class="demo-code">
-                  <code>div {
-                    style();
-                    }
-                  </code>
-              </pre>
-
+  }</code>
+</pre>
             </div>
-          </div>
+          </section>
         </div>
-
-      </article>  
-
+      </section>
       <a class="section-link link-demo" href="#function-demo">Demo</a>
-      
-    </section>
+      </section>
 
     <section class="technology-row tech-two" id="native-carousel-controls" aria-labelledby="tech-two-title">
       <div class="row-label">
@@ -250,6 +272,7 @@
       </section>
 
       <a class="section-link link-how" href="#carousel-how">How</a>
+      
       <section class="tech-section" id="carousel-demo">
         <p class="section-label">Craig · Demo</p>
         <h3>Build-up demo</h3>
@@ -503,7 +526,7 @@
                 <td></td>
             </tr>
 
-            <tr>                
+            <tr>
                 <td>-</td>
                 <td><a href="https://developer.chrome.com/blog/carousels-with-css">Chrome Developers: Carousels with CSS</a></td>
                 <td></td>
