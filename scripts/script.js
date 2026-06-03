@@ -2,7 +2,7 @@ const buttons = document.querySelectorAll('.theme-button');
 
 function themeChange(event) {
 
-    const container = document.getElementById('theme-change');
+    const container = document.getElementById('demo-theme');
     const clickedButton = event.target;
     const chosenTheme = clickedButton.value;
 
